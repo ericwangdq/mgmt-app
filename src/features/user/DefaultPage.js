@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
+import {Button} from 'antd';
 
 export class DefaultPage extends Component {
   static propTypes = {
@@ -13,6 +14,7 @@ export class DefaultPage extends Component {
   render() {
     return (
       <div className="user-default-page">
+      <Button type="primary">Button</Button>
         Page Content: user/DefaultPage Todo: ant-design things
       </div>
     );
