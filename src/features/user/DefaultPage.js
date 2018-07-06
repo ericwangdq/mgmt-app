@@ -14,7 +14,7 @@ export class DefaultPage extends Component {
   render() {
     return (
       <div className="user-default-page">
-      <Button type="primary">Button</Button>
+      <Button type="primary">Button</Button> <br/><br/>
         Page Content: user/DefaultPage Todo: ant-design things
       </div>
     );
