@@ -5,9 +5,14 @@ import {
   DefaultPage,
 } from './';
 
+import {
+  Layout,
+} from '../common';
+
 export default {
   path: 'user',
   name: 'User',
+  component: Layout,
   childRoutes: [
     { path: 'default-page', name: 'Default page', component: DefaultPage, isIndex: true },
   ],
