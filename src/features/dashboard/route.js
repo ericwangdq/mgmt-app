@@ -3,17 +3,24 @@
 
 import {
   DefaultPage,
+  Analysis,
+  Workplace,
+  Monitor,
 } from './';
 
 import {
   BasicLayout,
 } from '../common';
 
+
 export default {
-  path: 'user',
-  name: 'User',
+  path: 'dashboard',
+  name: 'Dashboard',
   component: BasicLayout,
   childRoutes: [
     { path: 'default-page', name: 'Default page', component: DefaultPage, isIndex: true },
+    { path: 'analysis', name: 'Analysis', component: Analysis },
+    { path: 'workplace', name: 'Workplace', component: Workplace },
+    { path: 'monitor', name: 'Monitor', component: Monitor },
   ],
 };

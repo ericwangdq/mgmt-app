@@ -3,17 +3,14 @@
 
 import {
   DefaultPage,
+  BasicForm,
 } from './';
 
-import {
-  BasicLayout,
-} from '../common';
-
 export default {
-  path: 'user',
-  name: 'User',
-  component: BasicLayout,
+  path: 'form',
+  name: 'Form',
   childRoutes: [
     { path: 'default-page', name: 'Default page', component: DefaultPage, isIndex: true },
+    { path: 'basic-form', name: 'Basic form', component: BasicForm },
   ],
 };
