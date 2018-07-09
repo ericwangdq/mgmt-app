@@ -51,6 +51,14 @@ export class DefaultPage extends Component {
               <Link to="/examples">/examples</Link>
             </li>
             <li>
+              To see user, access:&nbsp;
+              <Link to="/user">/user</Link>
+            </li>
+            <li>
+              To see dashboard, access:&nbsp;
+              <Link to="/dashboard">/dashboard</Link>
+            </li>
+            <li>
               Rekit Studio is running at:&nbsp;
               <a href="http://localhost:6076/" target="_blank" rel="noopener noreferrer">
                 http://localhost:6076/
