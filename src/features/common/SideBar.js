@@ -50,16 +50,16 @@ export class SideBar extends Component {
     return (
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['5']} defaultOpenKeys={['sub1']}>
         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Dashboard</span></span>}>
-          <Menu.Item key="5"><Link to="/dashboard"><Icon type="user" />Welcome</Link></Menu.Item>
-          <Menu.Item key="6"><Link to="/dashboard/analysis"><Icon type="user" />Analysis</Link></Menu.Item>
-          <Menu.Item key="7"><Link to="/dashboard/workplace"><Icon type="bar-chart" />Workplace</Link></Menu.Item>
-          <Menu.Item key="8"><Link to="/dashboard/monitor"><Icon type="credit-card" />Monitor</Link></Menu.Item>
+          <Menu.Item key="5"><Link to="/dashboard"><Icon type="user" /><span>Welcome</span></Link></Menu.Item>
+          <Menu.Item key="6"><Link to="/dashboard/analysis"><Icon type="user" /><span>Analysis</span></Link></Menu.Item>
+          <Menu.Item key="7"><Link to="/dashboard/workplace"><Icon type="bar-chart" /><span>Workplace</span></Link></Menu.Item>
+          <Menu.Item key="8"><Link to="/dashboard/monitor"><Icon type="credit-card" /><span>Monitor</span></Link></Menu.Item>
         </SubMenu>
         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Examples</span></span>}>
-          <Menu.Item key="9"><Link to="/examples">Welcome</Link></Menu.Item>
-          <Menu.Item key="13"><Link to="/examples/counter">Counter</Link></Menu.Item>  
-          <Menu.Item key="10"><Link to="/examples/reddit">Reddit API Demo</Link></Menu.Item>
-          <Menu.Item key="15"><Link to="/">Back to start page</Link></Menu.Item>
+          <Menu.Item key="9"><Link to="/examples"><span>Welcome</span></Link></Menu.Item>
+          <Menu.Item key="13"><Link to="/examples/counter"><span>Counter</span></Link></Menu.Item>  
+          <Menu.Item key="10"><Link to="/examples/reddit"><span>Reddit API Demo</span></Link></Menu.Item>
+          <Menu.Item key="15"><Link to="/"><span>Back to start page</span></Link></Menu.Item>
           <Menu.Item key="16">Option 10</Menu.Item>
           <SubMenu key="sub3" title="Submenu">
             <Menu.Item key="11">Option 11</Menu.Item>

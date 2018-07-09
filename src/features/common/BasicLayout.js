@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { SideBar } from './';
 import { Layout, Icon } from 'antd';
-const { Header, Sider, Content } = Layout
+import GlobalHeader from './GlobalHeader';
+import GlobalFooter from './GlobalFooter';
+
+const { Header, Sider, Content, Footer } = Layout
 
 export default class BasicLayout extends Component {
   static propTypes = {
@@ -25,6 +28,12 @@ export default class BasicLayout extends Component {
   //       </div>
   //     </div>
   render() {
+    const currentUser = {
+      name: 'Eric Wang',
+      email: 'wdq1103@outlook.com',
+      avatar: 'https://avatars2.githubusercontent.com/u/1897893?s=460&v=4'
+    };
+
     return (
       <Layout className="common-basic-layout">
         <Sider
@@ -42,15 +51,52 @@ export default class BasicLayout extends Component {
         </Sider>
         <Layout>
           <Header style={{ background: '#fff', padding: 0 }}>
-            <Icon
-              className="trigger toggle-icon"
-              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
+          <GlobalHeader
+            logo={''}
+            currentUser={currentUser}
+            fetchingNotices={''}
+            notices={''}
+            collapsed={this.state.collapsed}
+            isMobile={false}
+            onNoticeClear={null}
+            onCollapse={null}
+            onMenuClick={this.handleMenuClick}
+            onNoticeVisibleChange={null}
+            onToggle={this.toggle}
             />
           </Header>
           <Content className="common-page-container" style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
             {this.props.children}
           </Content>
+          <Footer style={{ padding: 0 }}>
+          <GlobalFooter
+            links={[
+              {
+                key: '个人首页',
+                title: '个人首页',
+                href: 'http://v2next.com',
+                blankTarget: true,
+              },
+              {
+                key: 'github',
+                title: <Icon type="github" />,
+                href: 'https://github.com/ericwdq/mgmt-app',
+                blankTarget: true,
+              },
+              {
+                key: 'Ant Design',
+                title: 'Ant Design',
+                href: 'http://ant.design',
+                blankTarget: true,
+              },
+            ]}
+            copyright={
+              <Fragment>
+                Copyright <Icon type="copyright" /> Eric Wang
+              </Fragment>
+            }
+          />
+        </Footer>
         </Layout>
       </Layout>
     );
