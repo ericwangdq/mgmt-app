@@ -21,12 +21,7 @@ export default class BasicLayout extends Component {
       collapsed: !this.state.collapsed,
     });
   }
-  // <div className="common-basic-layout">
-  //       <SideBar />
-  //       <div className="common-page-container">
-  //         {this.props.children}
-  //       </div>
-  //     </div>
+
   render() {
     const currentUser = {
       name: 'Eric Wang',
@@ -40,6 +35,7 @@ export default class BasicLayout extends Component {
           trigger={null}
           collapsible
           collapsed={this.state.collapsed}
+          width={256}
         >
           <div className="logo">
             <a href="/">
