@@ -10,10 +10,18 @@ export class Analysis extends Component {
     actions: PropTypes.object.isRequired,
   };
 
+  componentWillMount () {
+    console.log('will Mount');
+    this.props.actions.fetchAnalysis();
+  }
+
   render() {
+    const { fetchAnalysisPending, analysisData, fetchAnalysisError } = this.props.dashboard;
+    console.log(analysisData);
     return (
       <div className="dashboard-analysis">
         Page Content: dashboard/Analysis
+        {analysisData.salesData[0].x}
       </div>
     );
   }
