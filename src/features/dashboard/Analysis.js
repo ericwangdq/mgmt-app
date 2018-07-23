@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import { Alert, Spin } from 'antd';
 import { Bar } from '../components/Charts';
+
 export class Analysis extends Component {
   static propTypes = {
     dashboard: PropTypes.object.isRequired,
@@ -16,7 +17,6 @@ export class Analysis extends Component {
   };
 
   componentWillMount () {
-    console.log('will Mount');
     if (!this.props.dashboard.analysisData) {
       this.props.actions.fetchAnalysis()
       .then(() => {
@@ -79,7 +79,7 @@ export class Analysis extends Component {
       // salesTypeDataOffline,
     } = analysisData || {};
 
-    if (fetchAnalysisPending) {
+    if (fetchAnalysisPending || this.state.initializing) {
       return this.renderInitializing();
     }
 

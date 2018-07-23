@@ -1,11 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from './redux/actions';
 import { SideBar, GlobalHeader, GlobalFooter } from '../components';
 import { Layout, Icon } from 'antd';
 
 const { Header, Sider, Content, Footer } = Layout
 
-export default class BasicLayout extends Component {
+export class BasicLayout extends Component {
   static propTypes = {
     children: PropTypes.node,
   };
@@ -14,6 +17,13 @@ export default class BasicLayout extends Component {
     collapsed: false,
   };
 
+  componentWillMount () {
+    if (!this.props.common.currentUser) {
+      this.props.actions.fetchUser()
+    }
+  }
+
+
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -21,11 +31,8 @@ export default class BasicLayout extends Component {
   }
 
   render() {
-    const currentUser = {
-      name: 'Eric Wang',
-      email: 'wdq1103@outlook.com',
-      avatar: 'https://avatars2.githubusercontent.com/u/1897893?s=460&v=4'
-    };
+
+    const currentUser = this.props.common.currentUser || {};
 
     return (
       <Layout className="common-basic-layout">
@@ -96,3 +103,22 @@ export default class BasicLayout extends Component {
     );
   }
 }
+
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    common: state.common,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions }, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BasicLayout);

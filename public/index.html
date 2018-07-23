@@ -61,7 +61,8 @@
       }
 
       #root {
-        display: block;
+        opacity: 0;
+        transition: opacity .6s;
       }
     </style>
   </head>
@@ -119,8 +120,8 @@
             document.getElementsByTagName('head')[0].appendChild(scriptNode);
             loadingNode.style.display = 'none';
             window.setTimeout(function() {
-              rootNode.style.display = 'block';
-            }, 0);
+              rootNode.style.opacity= 1;
+            }, 200);
           }, 0);
         }, false);
 
