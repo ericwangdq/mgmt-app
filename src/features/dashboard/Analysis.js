@@ -17,7 +17,7 @@ export class Analysis extends Component {
 
   componentWillMount () {
     console.log('will Mount');
-    if (!this.props.analysisData) {
+    if (!this.props.dashboard.analysisData) {
       this.props.actions.fetchAnalysis()
       .then(() => {
         this.setState({
@@ -77,7 +77,7 @@ export class Analysis extends Component {
       // salesTypeData,
       // salesTypeDataOnline,
       // salesTypeDataOffline,
-    } = analysisData;
+    } = analysisData || {};
 
     if (fetchAnalysisPending) {
       return this.renderInitializing();

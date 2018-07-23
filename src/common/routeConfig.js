@@ -2,6 +2,7 @@ import { App } from '../features/home';
 import { PageNotFound } from '../features/common';
 import homeRoute from '../features/home/route';
 import commonRoute from '../features/common/route';
+import componentsRoute from '../features/components/route';
 import examplesRoute from '../features/examples/route';
 import userRoute from '../features/user/route';
 import dashboardRoute from '../features/dashboard/route';
@@ -12,6 +13,7 @@ import formRoute from '../features/form/route';
 const childRoutes = [
   homeRoute,
   commonRoute,
+  componentsRoute,
   examplesRoute,
   userRoute,
   dashboardRoute,

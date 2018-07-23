@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { SideBar } from './';
+import { SideBar, GlobalHeader, GlobalFooter } from '../components';
 import { Layout, Icon } from 'antd';
-import GlobalHeader from './GlobalHeader';
-import GlobalFooter from './GlobalFooter';
 
 const { Header, Sider, Content, Footer } = Layout
 
