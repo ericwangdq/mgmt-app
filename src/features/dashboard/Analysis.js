@@ -16,7 +16,7 @@ export class Analysis extends Component {
     initializing: true
   };
 
-  componentWillMount () {
+  componentWillMount() {
     if (!this.props.dashboard.analysisData) {
       this.props.actions.fetchAnalysis()
       .then(() => {
