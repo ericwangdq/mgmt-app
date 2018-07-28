@@ -126,6 +126,8 @@
         }, false);
 
         // TODO: handle load error
+
+        //request bundle.js
         req.open('GET', '<%= htmlWebpackPlugin.files.chunks["main"].entry %>');
         req.send();
         })();
