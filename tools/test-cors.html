@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-txt="PageTitle">XHR Cross domain</title>
+  <script type="text/javascript">
+    document.cookie = 'id-token=eric-' + new Date().toString() + '; domain=.eric.com;path=/';
+
+    function ajax(url, timeout, callback) {
+      var args = Array.prototype.slice.call(arguments).slice(3);
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+      xhr.withCredentials = true;
+      xhr.ontimeout = function () {
+        console.error("The request for " + url + " timed out.");
+      };
+      xhr.onload = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            callback.apply(xhr, args);
+          } else {
+            console.error(xhr.statusText);
+          }
+        }
+      };
+
+      xhr.timeout = timeout;
+      xhr.send(null);
+    }
+
+    function showContent(sMsg) {
+      document.write(sMsg + this.responseText);
+    }
+
+    ajax("http://sso.eric.com/api/user", 5 * 1000, showContent, "Content!\n");
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
