@@ -56,8 +56,9 @@
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",
-    "rekit-core": "^2.3.0",
-    "rekit-studio": "^2.3.0",
+    "rekit-core": "^2.3.4",
+    "rekit-portal": "^2.1.17",
+    "rekit-studio": "^2.4.1",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
@@ -69,7 +70,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "cnpm-install": "npm install --registry=https://registry.npm.taobao.org"
   },
   "rekit": {
     "devPort": 6075,
